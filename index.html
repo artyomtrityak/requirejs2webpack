@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+
+    <title>Requirejs2Webpack</title>
+
+    <script type="text/javascript">
+      var mxLanguage = 'en';
+      var mxLoadResources = false;
+      var mxLoadStylesheets = false;
+      var require = {
+          waitSeconds: 0
+      };
+    </script>
+    <script src="public/app/assets/vendor/mx-client.js"></script>
+    <script src="public/app/assets/vendor/require-2.1.5.js"></script>
+    <script src="public/app/config.js?${project.version}-${timestamp}"></script>
+
+</head>
+<body>
+    Hello !
+    <div id="global-loader" class="loader" style="display: block;">
+      <div class="loader-bg fixed"></div>
+      <img src="public/app/assets/img/loader.gif" class="loader-icon fixed" alt="loader" />
+    </div>
+</body>
+</html>
