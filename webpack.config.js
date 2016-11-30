@@ -11,9 +11,9 @@ module.exports = {
   },
   module: {
     loaders: [
-      //{ test: /underscore/, loader: 'exports?_' },
-      { test: /jquery/, loader: 'exports?jQuery' },
-      { test: /backbone/, loader: 'imports?underscore,jquery' },
+      { test: /underscore/, loader: 'expose?_' },
+      { test: /jquery/, loader: 'imports?this=>window!exports?jQuery' },
+      { test: /backbone/, loader: 'imports?this=>window,$=jquery,_=underscore' },
 
       {
         test: /\.coffee$/,
