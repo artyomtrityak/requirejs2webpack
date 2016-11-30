@@ -1,6 +1,8 @@
 define (require) ->
   'use strict'
 
-  Backbone = require('chaplin')
+  $ = require('jquery')
+  _ = require('underscore')
+  Backbone = require('backbone')
 
-  console.log 'loaded!', Backbone
+  console.log 'loaded!', _, $, Backbone
