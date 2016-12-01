@@ -313,13 +313,19 @@ module.exports = Dispatcher = (function() {
       _this = this;
     fileName = name + this.settings.controllerSuffix;
     moduleName = this.settings.controllerPath + fileName;
-    if (typeof define !== "undefined" && define !== null ? define.amd : void 0) {
-      //return require([moduleName], handler);
-    } else {
-      return setTimeout(function() {
-        //return handler(require(moduleName));
-      }, 0);
-    }
+
+
+    return setTimeout(function() {
+      return handler(window.GLOBAL_CONTROLLERS[moduleName]);
+    }, 0);
+
+    // if (typeof define !== "undefined" && define !== null ? define.amd : void 0) {
+    //   return require([moduleName], handler);
+    // } else {
+    //   return setTimeout(function() {
+    //     return handler(require(moduleName));
+    //   }, 0);
+    // }
   };
 
   Dispatcher.prototype.controllerLoaded = function(route, params, options, Controller) {

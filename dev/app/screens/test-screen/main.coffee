@@ -1,4 +1,17 @@
 define (require) ->
   'use strict'
 
-  console.log 'loaded sceeeen'
+  Chaplin = require('chaplin')
+
+  class BaseController extends Chaplin.Controller
+    routes: require('./routes')
+
+    beforeAction: (params, route, options) ->
+      super
+      console.log 'before action'
+
+    test1: ->
+      console.log 'test 1'
+
+    test2: ->
+      console.log 'test 2'

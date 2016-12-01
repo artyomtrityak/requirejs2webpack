@@ -25,7 +25,7 @@ define (require) ->
       @initMediator()
 
       # Register all routes.
-      #@initRouter routes, pushState: false
+      @initRouter routes, pushState: false
 
       # Configure application
       @configure()
@@ -51,14 +51,7 @@ define (require) ->
       Chaplin.mediator.seal()
 
     initAppComponents: ->
-      # @components =
-      #   menu: new (require('widgets/main-menu'))()
-      #   propertiesManager: new (require('widgets/properties-manager'))()
-      #   history: new (require('widgets/history'))()
-      #   parameters: new (require('widgets/parameters'))()
-      #   automatch: new (require('widgets/automatch'))()
-
-      # parameterClient = require('shared/commander/parameter-client')
-      # parameterClient.initialize()
+      @components =
+        menu: new (require('widgets/users'))()
 
     new Application()

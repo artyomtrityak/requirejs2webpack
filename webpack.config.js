@@ -55,9 +55,10 @@ module.exports = {
       chaplin: path.join(__dirname, 'dev/app/assets/vendor/chaplin-0.12'),
 
       //Screens
-      'screens/test-screen$': 'screens/test-screen/main.coffee'
+      'screens/test-screen$': 'screens/test-screen/main.coffee',
 
       //Widgets
+      'widgets/users$': 'widgets/users/main.coffee'
     }
   },
   devtool: 'source-map'
