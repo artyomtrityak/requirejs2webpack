@@ -1,11 +1,14 @@
 define (require) ->
   'use strict'
 
+  $ = require('jquery')
   React = require('react')
   ReactDOM = require('react-dom')
   Chaplin = require('chaplin')
   View = require('./view')
   ReactView = require('./react-view')
+  
+  require('fullcalendar')
 
 
   class BaseController extends Chaplin.Controller
@@ -25,3 +28,11 @@ define (require) ->
         React.createElement(ReactView, {displayName: 'My display name'})
         document.querySelector('#content')
       )
+
+      $('#content').fullCalendar({
+        header: {
+          left: 'prev,next today title',
+          center: '',
+          right: 'month,agendaWeek,agendaDay'
+        }
+      })

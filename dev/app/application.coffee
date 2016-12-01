@@ -5,8 +5,11 @@ define (require) ->
   _ = require('underscore')
   Backbone = require('backbone')
   routes = require('routes')
-  
+  ModelState = require('modelstate')
   i18n = require('assets/nls/root/texts')
+
+  require('noty.layout.top.right')
+
 
   class Application extends Chaplin.Application
     title: i18n.application.title
@@ -43,7 +46,7 @@ define (require) ->
     configure: ->
       # Configure Q Promises to speedup them (default), change for debug
       #Q.longStackSupport = off
-      #_.extend(Backbone.Model::, ModelState)
+      _.extend(Backbone.Model::, ModelState)
 
     initMediator: ->
       Chaplin.mediator.originalURL = null
