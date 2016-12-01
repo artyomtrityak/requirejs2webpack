@@ -2,6 +2,7 @@ define (require) ->
   'use strict'
 
   Chaplin = require('chaplin')
+  View = require('./view')
 
   class BaseController extends Chaplin.Controller
     routes: require('./routes')
@@ -15,3 +16,4 @@ define (require) ->
 
     test2: ->
       console.log 'test 2'
+      @view = new View()

@@ -13,6 +13,7 @@ module.exports = {
     loaders: [
       //Shim
       { test: /underscore/, loader: 'expose?_' },
+      { test: /handlebars/, loader: 'imports?this=>window!exports?Handlebars' },
       { test: /jquery/, loader: 'imports?this=>window!exports?jQuery' },
       { test: /backbone/, loader: 'imports?this=>window,$=jquery,_=underscore' },
       { test: /chaplin/, loader: 'imports?this=>window,backbone' },
@@ -53,6 +54,7 @@ module.exports = {
       jquery: path.join(__dirname, 'dev/app/assets/vendor/jquery-1.9.1'),
       underscore: path.join(__dirname, 'dev/app/assets/vendor/underscore-1.7.0'),
       chaplin: path.join(__dirname, 'dev/app/assets/vendor/chaplin-0.12'),
+      handlebars: path.join(__dirname, 'dev/app/assets/vendor/handlebars-1.0.12'),
 
       //Screens
       'screens/test-screen$': 'screens/test-screen/main.coffee',

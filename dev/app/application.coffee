@@ -6,9 +6,10 @@ define (require) ->
   Backbone = require('backbone')
   routes = require('routes')
   
+  i18n = require('assets/nls/root/texts')
 
   class Application extends Chaplin.Application
-    title: 'Test'
+    title: i18n.application.title
 
     initialize: ->
     
