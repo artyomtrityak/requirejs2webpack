@@ -5,6 +5,9 @@ define (require) ->
   $ = require('jquery')
   Chaplin = require('chaplin')
   template = require('text!./template.hbs')
+  rivets = require 'rivets'
+
+  console.log 'rivets:', rivets
 
 
   class MainLayout extends Chaplin.View
@@ -37,4 +40,6 @@ define (require) ->
 
     attach: ->
       super
+      @rivets = rivets.bind @$el, model: @[@boundModel] or @model
       console.log 'attach me'
+

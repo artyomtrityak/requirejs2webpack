@@ -10,6 +10,9 @@ module.exports = {
       'cookies',
       'jqueryui-draggable',
       'inputmask',
+      'select2',
+      'codemirror-plugins',
+      'jXml2Json',
       './dev/app/application.coffee'
     ]
   },
@@ -29,9 +32,19 @@ module.exports = {
       { test: /noty\.js/, loader: 'imports?jquery' },
       { test: /noty\.theme/, loader: 'imports?noty' },
       { test: /noty\.layout\.top\.right/, loader: 'imports?notyTheme=noty.theme' },
+      { test: /select2/, loader: 'imports?jquery' },
+      { test: /codemirror\.js/, loader: 'expose?CodeMirror' },
+      { test: /jquery\.xml2json/, loader: 'imports?jquery' },
+      
+      
       
       
       //Bind files compilers
+      {
+        test: /\.json$/,
+        exclude: /node_modules/,
+        loader: 'json-loader'
+      },
       {
         test: /\.coffee$/,
         exclude: /node_modules/,
@@ -81,6 +94,31 @@ module.exports = {
       noty: path.join(__dirname, 'dev/app/assets/vendor/noty'),
       'noty.theme': path.join(__dirname, 'dev/app/assets/vendor/noty.theme'),
       'noty.layout.top.right': path.join(__dirname, 'dev/app/assets/vendor/noty.layout.top.right'),
+      'properties': path.join(__dirname, 'dev/app/properties.json'),
+      'time-zones': path.join(__dirname, 'dev/app/time-zones.json'),
+      rivets: path.join(__dirname, 'dev/app/assets/vendor/rivets'),
+      select2: path.join(__dirname, 'dev/app/assets/vendor/select2'),
+      moment: path.join(__dirname, 'dev/app/assets/vendor/moment-2.8.3'),
+      'moment-timezone': path.join(__dirname, 'dev/app/assets/vendor/moment-timezone'),
+      pikaday: path.join(__dirname, 'dev/app/assets/vendor/pikaday'),
+      jXml2Json: path.join(__dirname, 'dev/app/assets/vendor/jquery.xml2json'),
+
+      //codemirror
+      codemirror: path.join(__dirname, 'dev/app/assets/vendor/codemirror/codemirror'),
+      showhint: path.join(__dirname, 'dev/app/assets/vendor/codemirror/show-hint'),
+      anywordhint: path.join(__dirname, 'dev/app/assets/vendor/codemirror/anyword-hint'),
+      bracefold: path.join(__dirname, 'dev/app/assets/vendor/codemirror/brace-fold'),
+      foldcode: path.join(__dirname, 'dev/app/assets/vendor/codemirror/foldcode'),
+      foldgutter: path.join(__dirname, 'dev/app/assets/vendor/codemirror/foldgutter'),
+      dialog: path.join(__dirname, 'dev/app/assets/vendor/codemirror/dialog'),
+      search: path.join(__dirname, 'dev/app/assets/vendor/codemirror/search'),
+      searchcursor: path.join(__dirname, 'dev/app/assets/vendor/codemirror/searchcursor'),
+      closebrackets: path.join(__dirname, 'dev/app/assets/vendor/codemirror/closebrackets'),
+      matchbrackets: path.join(__dirname, 'dev/app/assets/vendor/codemirror/matchbrackets'),
+      activeline: path.join(__dirname, 'dev/app/assets/vendor/codemirror/active-line'),
+      overlay: path.join(__dirname, 'dev/app/assets/vendor/codemirror/overlay'),
+      'codemirror-plugins': path.join(__dirname, 'dev/app/shared/lib/codemirror-plugins'),
+      
 
       //Screens
       'screens/test-screen$': 'screens/test-screen/main.coffee',

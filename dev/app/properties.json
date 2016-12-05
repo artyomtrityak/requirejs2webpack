@@ -1,0 +1,7 @@
+{
+  "baseURL": "/commander/",
+  "apiURL":  "https://192.168.6.66/commander/link/jsonServerRequest",
+  "defaultProjectName": "Default",
+  "gwtURL": "/commander/gwt/ec.CoreComponent/ec.CoreComponent.nocache.js",
+  "version": "${project.version}-${timestamp}"
+}
