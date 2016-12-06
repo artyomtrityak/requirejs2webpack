@@ -35,6 +35,10 @@ module.exports = {
       { test: /select2/, loader: 'imports?jquery' },
       { test: /codemirror\.js/, loader: 'expose?CodeMirror' },
       { test: /jquery\.xml2json/, loader: 'imports?jquery' },
+      { test: /react\-sortable\-mixin/, loader: 'imports?sortable' },
+      { test: /keymaster/, loader: 'imports?this=>window,global=>window' },
+      
+      
       
       
       
@@ -102,6 +106,10 @@ module.exports = {
       'moment-timezone': path.join(__dirname, 'dev/app/assets/vendor/moment-timezone'),
       pikaday: path.join(__dirname, 'dev/app/assets/vendor/pikaday'),
       jXml2Json: path.join(__dirname, 'dev/app/assets/vendor/jquery.xml2json'),
+      sortable: path.join(__dirname, 'dev/app/assets/vendor/sortable'),
+      reactSortableMixin: path.join(__dirname, 'dev/app/assets/vendor/react-sortable-mixin'),
+      'react-input-autosize': path.join(__dirname, 'dev/app/assets/vendor/react-input-autosize'),
+      keymaster: path.join(__dirname, 'dev/app/assets/vendor/keymaster'),
 
       //codemirror
       codemirror: path.join(__dirname, 'dev/app/assets/vendor/codemirror/codemirror'),

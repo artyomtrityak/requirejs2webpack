@@ -8,6 +8,9 @@ define (require) ->
   CodeMirror = require('codemirror')
   moment = require('moment')
   Pickaday = require('pikaday')
+  reactSortableMixin = require('reactSortableMixin')
+  Input = require('react-input-autosize')
+  keymaster = require('keymaster')
 
   require('codemirror-plugins')
 
@@ -15,6 +18,9 @@ define (require) ->
   console.log 'codemirror', CodeMirror
   console.log 'moment:', moment
   console.log 'pick:', Pickaday
+  console.log 'sortable mixin:', reactSortableMixin
+  console.log 'input:', Input
+  console.log 'key:', keymaster
 
   class Users
     constructor: ->
