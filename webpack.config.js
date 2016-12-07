@@ -9,11 +9,14 @@ module.exports = {
       'jQueryAdditionalEvents',
       'cookies',
       'jqueryui-draggable',
+      'jquery.nouislider',
       'inputmask',
       'select2',
       'hooks',
+      'es5shim',
       'codemirror-plugins',
       'jXml2Json',
+      'toggles', // TODO: remove toggles
       './dev/app/application.coffee'
     ]
   },
@@ -37,12 +40,8 @@ module.exports = {
       { test: /codemirror\.js/, loader: 'expose?CodeMirror' },
       { test: /jquery\.xml2json/, loader: 'imports?jquery' },
       { test: /react\-sortable\-mixin/, loader: 'imports?sortable' },
-      { test: /keymaster/, loader: 'imports?this=>window,global=>window' },
-      
-      
-      
-      
-      
+      { test: /jquery\.nouislider/, loader: 'imports?jquery' },
+      { test: /toggles\.js/, loader: 'imports?jquery' },
       
       //Bind files compilers
       {
@@ -78,41 +77,36 @@ module.exports = {
     root: [
       path.join(__dirname, 'dev/app/')
     ],
+    
     extensions: [
       '', '.js', '.jsx', '.coffee'
     ],
+    
     modulesDirectories: [
       path.join(__dirname, 'node_modules'),
     ],
+
     alias: {
       //Aliases
       backbone: path.join(__dirname, 'dev/app/assets/vendor/backbone-1.0.0'),
-      jquery: path.join(__dirname, 'dev/app/assets/vendor/jquery-1.9.1'),
-      underscore: path.join(__dirname, 'dev/app/assets/vendor/underscore-1.7.0'),
-      chaplin: path.join(__dirname, 'dev/app/assets/vendor/chaplin-0.12'),
-      zandlebars: path.join(__dirname, 'dev/app/assets/vendor/handlebars-1.0.12'),
       modelstate: path.join(__dirname, 'dev/app/assets/vendor/backbone.model.state'),
-      jQueryAdditionalEvents: path.join(__dirname, 'dev/app/assets/vendor/jquery.additional.events'),
+      chaplin: path.join(__dirname, 'dev/app/assets/vendor/chaplin-0.12'),
       cookies: path.join(__dirname, 'dev/app/assets/vendor/jquery.cookie'),
+      handlebars: path.join(__dirname, 'dev/app/assets/vendor/handlebars-1.0.12'),
+      hooks: path.join(__dirname, 'dev/app/assets/vendor/hooks'),
+      jquery: path.join(__dirname, 'dev/app/assets/vendor/jquery-1.9.1'),
       'jqueryui-draggable': path.join(__dirname, 'dev/app/assets/vendor/jquery-ui-core-draggable-1.11.1'),
       inputmask: path.join(__dirname, 'dev/app/assets/vendor/inputmask'),
+      moment: path.join(__dirname, 'dev/app/assets/vendor/moment-2.8.3'),
+      'moment-timezone': path.join(__dirname, 'dev/app/assets/vendor/moment-timezone'),
       noty: path.join(__dirname, 'dev/app/assets/vendor/noty'),
       'noty.theme': path.join(__dirname, 'dev/app/assets/vendor/noty.theme'),
       'noty.layout.top.right': path.join(__dirname, 'dev/app/assets/vendor/noty.layout.top.right'),
       'properties': path.join(__dirname, 'dev/app/properties.json'),
       'time-zones': path.join(__dirname, 'dev/app/time-zones.json'),
+      pikaday: path.join(__dirname, 'dev/app/assets/vendor/pikaday'),
       rivets: path.join(__dirname, 'dev/app/assets/vendor/rivets'),
       select2: path.join(__dirname, 'dev/app/assets/vendor/select2'),
-      moment: path.join(__dirname, 'dev/app/assets/vendor/moment-2.8.3'),
-      'moment-timezone': path.join(__dirname, 'dev/app/assets/vendor/moment-timezone'),
-      pikaday: path.join(__dirname, 'dev/app/assets/vendor/pikaday'),
-      jXml2Json: path.join(__dirname, 'dev/app/assets/vendor/jquery.xml2json'),
-      sortable: path.join(__dirname, 'dev/app/assets/vendor/sortable'),
-      reactSortableMixin: path.join(__dirname, 'dev/app/assets/vendor/react-sortable-mixin'),
-      'react-input-autosize': path.join(__dirname, 'dev/app/assets/vendor/react-input-autosize'),
-      keymaster: path.join(__dirname, 'dev/app/assets/vendor/keymaster'),
-      hooks: path.join(__dirname, 'dev/app/assets/vendor/hooks'),
-
       //codemirror
       codemirror: path.join(__dirname, 'dev/app/assets/vendor/codemirror/codemirror'),
       showhint: path.join(__dirname, 'dev/app/assets/vendor/codemirror/show-hint'),
@@ -128,7 +122,22 @@ module.exports = {
       activeline: path.join(__dirname, 'dev/app/assets/vendor/codemirror/active-line'),
       overlay: path.join(__dirname, 'dev/app/assets/vendor/codemirror/overlay'),
       'codemirror-plugins': path.join(__dirname, 'dev/app/shared/lib/codemirror-plugins'),
-      
+      'jquery.nouislider': path.join(__dirname, 'dev/app/assets/vendor/jquery.nouislider'),
+      toggles: path.join(__dirname, 'dev/app/assets/vendor/toggles'),
+      underscore: path.join(__dirname, 'dev/app/assets/vendor/underscore-1.7.0'),
+      validation: path.join(__dirname, 'dev/app/assets/vendor/backbone-validation-0.9.1'),
+      Q: path.join(__dirname, 'dev/app/assets/vendor/q'),
+      jQueryAdditionalEvents: path.join(__dirname, 'dev/app/assets/vendor/jquery.additional.events'),
+      jsdiff: path.join(__dirname, 'dev/app/assets/vendor/jsdiff'),
+      jXml2Json: path.join(__dirname, 'dev/app/assets/vendor/jquery.xml2json'),
+      es5shim: path.join(__dirname, 'dev/app/assets/vendor/es5shim'),
+      reactSortableMixin: path.join(__dirname, 'dev/app/assets/vendor/react-sortable-mixin'),
+      sortable: path.join(__dirname, 'dev/app/assets/vendor/sortable'),
+      classnames: path.join(__dirname, 'dev/app/assets/vendor/classnames'),
+      'react-input-autosize': path.join(__dirname, 'dev/app/assets/vendor/react-input-autosize'),
+      d3: path.join(__dirname, 'dev/app/assets/vendor/d3'),
+      keymaster: path.join(__dirname, 'dev/app/assets/vendor/keymaster'),
+
 
       'screens/test-screen$': 'screens/test-screen/main.coffee',
       //Screens

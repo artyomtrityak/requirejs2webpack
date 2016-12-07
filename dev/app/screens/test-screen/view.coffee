@@ -1,7 +1,7 @@
 define (require) ->
   'use strict'
 
-  handlebars = require('zandlebars')
+  handlebars = require('handlebars')
   $ = require('jquery')
   Chaplin = require('chaplin')
   template = require('text!./template.hbs')
